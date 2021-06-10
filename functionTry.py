@@ -1,5 +1,12 @@
-text = open('C:/Users/wmorl/Concordance Program/GettysburgAddress.txt', 'r')
+# This program is designed to create a concordance of a .txt file and includes which sentence each word occurs in
+
+
+
+
+text = open('C:/Users/wmorl/Concordance Program/two.txt', 'r') # open a file in read mode
 t = text.read()
+
+# clean the .txt file of various special charecters to avoid false mismatches
 t = t.replace(',', '')
 t = t.replace(';', '')
 t = t.replace('-', '')
@@ -12,24 +19,28 @@ t = t.replace('\r','')
 t = t.lstrip()
 t = t.strip()
 t = t.upper()
+
+# split file into sentences 
 sents = t.split(".")
+#split file into words 
 words = t.split(" ")
-words = words
+ #initialize a dictionary to hold words 
 myDict = dict()
-keyList = []
+
 
 def makeConcordance(f):
-	i=0
+
 	for word in words:
-		word = word.replace('.','')
+
+		word = word.replace('.','') # replace periods at the end of a word to keep track of words at the end of sentences
+
+		# this if statement will go through each word and create a count of how many times the word appears
 		if word in myDict:
-			
 			myDict[word] = myDict[word]+1
 		else:
 			myDict[word] = 1
 
-	#for key in sorted(myDict):
-		#print(key,':', myDict[key])
+		# this loop will go through a pre-sorted list of words and check which sentences they appear in the create an empty list for the next word
 	for key in sorted(myDict):
 		newkeyList = []
 		i=0 
@@ -42,4 +53,5 @@ def makeConcordance(f):
 		print(key, ':', myDict[key], newkeyList)
 
 
+#function call
 makeConcordance(t)
