@@ -3,7 +3,7 @@
 
 
 
-text = open('C:/Users/wmorl/Concordance Program/script.txt', 'r') # open a file in read mode
+text = open('C:/Users/wmorl/Concordance Program/GettysburgAddress.txt', 'r') # open a file in read mode
 t = text.read()
 
 # clean the .txt file of various special charecters to avoid false mismatches and delimit sentences correctly
