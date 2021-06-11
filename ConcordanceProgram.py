@@ -13,19 +13,19 @@ t = t.replace('-', '')
 t = t.replace('"', '')
 t = t.replace('?', '.')
 t = t.replace('!', '.')
-t = t.replace("--", '')
-t = t.replace("-",'')
-t = t.replace("(", '')
-t = t.replace(")", '')
+t = t.replace('--', '')
+t = t.replace('-','')
+t = t.replace('(', '')
+t = t.replace(')', '')
 t = t.replace('\n', '')
 t = t.lstrip()
 t = t.strip()
 t = t.upper()
 
 # split file into sentences 
-sents = t.split(".")
+sents = t.split('.')
 #split file into words 
-words = t.split(" ")
+words = t.split(' ')
  #initialize a dictionary to hold words 
 myDict = dict()
 
